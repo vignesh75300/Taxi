@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Login Page</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        .a {
+            width: 300px;
+            margin: auto;
+            margin-top: 150px;
+            padding: 90px;
+            border-radius: 22px;
+            background: rgb(23, 135, 226);
+
+
+        }
+
+        body {
+            background-image: url("https://i.pinimg.com/originals/c8/2c/8c/c82c8c4ff9352c4d2e559c35f21719ad.gif");
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <body>
+        <h1 style="color:rgba(0, 0, 3, 0.774);">LOGIN</h1>
+        <div class="a">
+            <form onsubmit="login()" action="CabList.html">
+                <label for="number">Username</label>
+                <input type="number" name="MobileNumber" id="MobileNumber" placeholder="10 digit mobilenumber" required>
+                <br/>
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" placeholder="password" required>
+                <br/>
+                <br/>
+                <input type="SUBMIT" value="SUBMIT">
+                <input type="RESET" value="RESET">
+        </div>
+        </form>
+        <script>
+            function login() {
+
+                alert("Login button clicked");
+                let username = document.querySelector("#MobileNumber").value;     //Enter the mobile number for username
+                alert("Username:" + username);
+                let password = document.querySelector("#password").value;         //Enter the password
+                alert("Password:" + password);
+                var pattern = /^[7-9][0-9]{9}$/;
+
+                if ((pattern.test(username)&& password.length >= 8))                  //check whether username is equals to 10 and password is greater than or equals to 8
+                {
+                    alert(" login success");
+
+                }
+                else {
+                    alert("Invalid login credentials");
+                    event.preventDefault();
+                }
+
+
+            }
+
+
+        </script>
+
+    </body>
+
+</html>
